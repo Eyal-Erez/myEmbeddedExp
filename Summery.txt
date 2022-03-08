@@ -40,7 +40,8 @@ int funcName(<argument>) {....} << implementation
 
 suggested inline--> int inline funcName(<argument>) {...} 
 
-
+#define FEATURESP_BITS_STRING_SET_BIT_ON(bit)            FEATURESP_list[bit/8] |= 0x80 >> (bit%8)
+#define FEATURESP_BITS_STRING_SET_BIT_OFF(bit)           FEATURESP_list[bit/8] &= ~(0x80 >> (bit%8))
 
 
 
