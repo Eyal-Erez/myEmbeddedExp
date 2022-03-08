@@ -1,0 +1,47 @@
+Bits Manipulation
+   #define MASK(x) (1<<(x))
+   PORTC &= ~MASK(3);  << Clear specific bit
+   PORTC |= ~MASK(3);  << check all other bits
+   PORTC &= MASK(3);   << Check specfic bit
+   PORTC |= MASK(3);   << Set Specific bit
+   
+Bit fields
+   typedef union{
+    struct {
+       unsigned sunday     :1; <<-- bit 0
+       unsigned monday     :1;
+       unsigned tuesday    :1;
+       unsigned wednesday  :1;
+       unsigned thursday   :1;
+       unsigned friday     :1;
+       unsigned saturday   :1; <<-- bit 6
+       } days;
+   uint8_t byte_sized;
+  } weekdays;
+  
+ using:
+  weekdays active_days;
+  active_days.days.sunday =
+
+Volatile
+  volatile int x;
+  Used to make sure it will check the value of x--> will disable optimization on x!!!
+
+const int letPin = 13; 
+   --> will save the value(13) in the read-only memory.
+   --> will stored only once(less memory space), compare to #define that will bloat the code
+
+Macro Functions
+#define square_macro(x) ((x)*(x))
+
+Force inline --> 
+int funcName(<argument>) __attribute__((always_inline)); <<prototype
+int funcName(<argument>) {....} << implementation
+
+suggested inline--> int inline funcName(<argument>) {...} 
+
+
+
+
+
+ 
